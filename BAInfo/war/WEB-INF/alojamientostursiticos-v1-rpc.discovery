@@ -1,0 +1,221 @@
+{
+ "kind": "discovery#rpcDescription",
+ "etag": "\"doS0mIKix6_L3_LoT-sZZjofha4/2qhfF0iJzng7SsbX3FAkTbVZlxo\"",
+ "discoveryVersion": "v1",
+ "id": "alojamientostursiticos:v1",
+ "name": "alojamientostursiticos",
+ "version": "v1",
+ "description": "This is an API",
+ "icons": {
+  "x16": "http://www.google.com/images/icons/product/search-16.gif",
+  "x32": "http://www.google.com/images/icons/product/search-32.gif"
+ },
+ "protocol": "rpc",
+ "rootUrl": "https://ba-info.appspot.com/_ah/api/",
+ "rpcUrl": "https://ba-info.appspot.com/_ah/api/rpc",
+ "rpcPath": "/_ah/api/rpc",
+ "parameters": {
+  "alt": {
+   "type": "string",
+   "description": "Data format for the response.",
+   "default": "json",
+   "enum": [
+    "json"
+   ],
+   "enumDescriptions": [
+    "Responses with Content-Type of application/json"
+   ],
+   "location": "query"
+  },
+  "fields": {
+   "type": "string",
+   "description": "Selector specifying which fields to include in a partial response.",
+   "location": "query"
+  },
+  "key": {
+   "type": "string",
+   "description": "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.",
+   "location": "query"
+  },
+  "oauth_token": {
+   "type": "string",
+   "description": "OAuth 2.0 token for the current user.",
+   "location": "query"
+  },
+  "prettyPrint": {
+   "type": "boolean",
+   "description": "Returns response with indentations and line breaks.",
+   "default": "true",
+   "location": "query"
+  },
+  "quotaUser": {
+   "type": "string",
+   "description": "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.",
+   "location": "query"
+  },
+  "userIp": {
+   "type": "string",
+   "description": "IP address of the site where the request originates. Use this if you want to enforce per-user limits.",
+   "location": "query"
+  }
+ },
+ "auth": {
+  "oauth2": {
+   "scopes": {
+    "https://www.googleapis.com/auth/userinfo.email": {
+     "description": "View your email address"
+    }
+   }
+  }
+ },
+ "schemas": {
+  "AlojamientoTursitico": {
+   "id": "AlojamientoTursitico",
+   "type": "object",
+   "properties": {
+    "altura": {
+     "type": "string"
+    },
+    "categoria": {
+     "type": "string"
+    },
+    "direccion": {
+     "type": "string"
+    },
+    "domicilio": {
+     "type": "string"
+    },
+    "email": {
+     "type": "string"
+    },
+    "id": {
+     "type": "string",
+     "format": "int64"
+    },
+    "latitud": {
+     "type": "number",
+     "format": "float"
+    },
+    "longitud": {
+     "type": "number",
+     "format": "float"
+    },
+    "nombre": {
+     "type": "string"
+    },
+    "separatorChar": {
+     "type": "string"
+    },
+    "sourceURL": {
+     "type": "string"
+    },
+    "telefono": {
+     "type": "string"
+    },
+    "ubicacion": {
+     "type": "string"
+    },
+    "web": {
+     "type": "string"
+    }
+   }
+  },
+  "AlojamientoTursiticoCollection": {
+   "id": "AlojamientoTursiticoCollection",
+   "type": "object",
+   "properties": {
+    "items": {
+     "type": "array",
+     "items": {
+      "$ref": "AlojamientoTursitico"
+     }
+    }
+   }
+  }
+ },
+ "methods": {
+  "alojamientostursiticos.alojamientoTursiticoEndpoint.getAlojamientoTursitico": {
+   "id": "alojamientostursiticos.alojamientoTursiticoEndpoint.getAlojamientoTursitico",
+   "allowGet": true,
+   "parameters": {
+    "id": {
+     "type": "string",
+     "required": true,
+     "format": "int64"
+    }
+   },
+   "parameterOrder": [
+    "id"
+   ],
+   "returns": {
+    "$ref": "AlojamientoTursitico"
+   },
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
+  "alojamientostursiticos.alojamientoTursiticoEndpoint.insertAlojamientoTursitico": {
+   "id": "alojamientostursiticos.alojamientoTursiticoEndpoint.insertAlojamientoTursitico",
+   "parameters": {
+    "resource": {
+     "$ref": "AlojamientoTursitico"
+    }
+   },
+   "parameterOrder": [
+    "resource"
+   ],
+   "returns": {
+    "$ref": "AlojamientoTursitico"
+   },
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
+  "alojamientostursiticos.alojamientoTursiticoEndpoint.listAlojamientoTursitico": {
+   "id": "alojamientostursiticos.alojamientoTursiticoEndpoint.listAlojamientoTursitico",
+   "allowGet": true,
+   "returns": {
+    "$ref": "AlojamientoTursiticoCollection"
+   },
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
+  "alojamientostursiticos.alojamientoTursiticoEndpoint.removeAlojamientoTursitico": {
+   "id": "alojamientostursiticos.alojamientoTursiticoEndpoint.removeAlojamientoTursitico",
+   "parameters": {
+    "id": {
+     "type": "string",
+     "required": true,
+     "format": "int64"
+    }
+   },
+   "parameterOrder": [
+    "id"
+   ],
+   "returns": {
+    "$ref": "AlojamientoTursitico"
+   },
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
+  "alojamientostursiticos.alojamientoTursiticoEndpoint.updateAlojamientoTursitico": {
+   "id": "alojamientostursiticos.alojamientoTursiticoEndpoint.updateAlojamientoTursitico",
+   "parameters": {
+    "resource": {
+     "$ref": "AlojamientoTursitico"
+    }
+   },
+   "parameterOrder": [
+    "resource"
+   ],
+   "returns": {
+    "$ref": "AlojamientoTursitico"
+   },
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  }
+ }
+}

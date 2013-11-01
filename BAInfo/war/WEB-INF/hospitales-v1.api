@@ -1,0 +1,235 @@
+{
+  "extends" : "thirdParty.api",
+  "abstract" : false,
+  "root" : "https://ba-info.appspot.com/_ah/api",
+  "name" : "hospitales",
+  "version" : "v1",
+  "defaultVersion" : false,
+  "adapter" : {
+    "bns" : "https://ba-info.appspot.com/_ah/spi",
+    "deadline" : 10.0,
+    "type" : "lily"
+  },
+  "auth" : {
+    "allowCookieAuth" : false
+  },
+  "frontendLimits" : {
+    "unregisteredUserQps" : -1,
+    "unregisteredQps" : -1,
+    "unregisteredDaily" : -1,
+    "rules" : [ ]
+  },
+  "cacheControl" : {
+    "type" : "no-cache",
+    "maxAge" : 0
+  },
+  "methods" : {
+    "hospitales.hospitalEndpoint.listHospital" : {
+      "path" : "hospital",
+      "httpMethod" : "GET",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ ],
+      "clientIds" : [ "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "ar.com.gtug.bainfo.endppoints.locations.HospitalEndpoint.listHospital",
+      "request" : {
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "hospitales.hospitalEndpoint.getHospital" : {
+      "path" : "hospital/{id}",
+      "httpMethod" : "GET",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ ],
+      "clientIds" : [ "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "ar.com.gtug.bainfo.endppoints.locations.HospitalEndpoint.getHospital",
+      "request" : {
+        "parameters" : {
+          "id" : {
+            "type" : "int64",
+            "required" : true
+          }
+        },
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "hospitales.hospitalEndpoint.updateHospital" : {
+      "path" : "hospital",
+      "httpMethod" : "PUT",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ ],
+      "clientIds" : [ "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "ar.com.gtug.bainfo.endppoints.locations.HospitalEndpoint.updateHospital",
+      "request" : {
+        "body" : "autoTemplate(backendRequest)",
+        "bodyName" : "resource"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "hospitales.hospitalEndpoint.removeHospital" : {
+      "path" : "hospital/{id}",
+      "httpMethod" : "DELETE",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ ],
+      "clientIds" : [ "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "ar.com.gtug.bainfo.endppoints.locations.HospitalEndpoint.removeHospital",
+      "request" : {
+        "parameters" : {
+          "id" : {
+            "type" : "int64",
+            "required" : true
+          }
+        },
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "hospitales.hospitalEndpoint.insertHospital" : {
+      "path" : "hospital",
+      "httpMethod" : "POST",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ ],
+      "clientIds" : [ "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "ar.com.gtug.bainfo.endppoints.locations.HospitalEndpoint.insertHospital",
+      "request" : {
+        "body" : "autoTemplate(backendRequest)",
+        "bodyName" : "resource"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    }
+  },
+  "descriptor" : {
+    "schemas" : {
+      "Hospital" : {
+        "id" : "Hospital",
+        "type" : "object",
+        "properties" : {
+          "id" : {
+            "type" : "string",
+            "format" : "int64"
+          },
+          "idHospital" : {
+            "type" : "integer"
+          },
+          "nombre" : {
+            "type" : "string"
+          },
+          "calle" : {
+            "type" : "string"
+          },
+          "altura" : {
+            "type" : "string"
+          },
+          "telefono" : {
+            "type" : "string"
+          },
+          "guardia" : {
+            "type" : "string"
+          },
+          "fax" : {
+            "type" : "string"
+          },
+          "web" : {
+            "type" : "string"
+          },
+          "codPostal" : {
+            "type" : "string"
+          },
+          "tipoEspecialidad" : {
+            "type" : "string"
+          },
+          "tipo" : {
+            "type" : "string"
+          },
+          "modoAt1" : {
+            "type" : "string"
+          },
+          "modoAt2" : {
+            "type" : "string"
+          },
+          "dependAdm" : {
+            "type" : "string"
+          },
+          "direccion" : {
+            "type" : "string"
+          },
+          "longitud" : {
+            "type" : "number",
+            "format" : "float"
+          },
+          "latitud" : {
+            "type" : "number",
+            "format" : "float"
+          },
+          "separatorChar" : {
+            "type" : "string"
+          },
+          "sourceURL" : {
+            "type" : "string"
+          }
+        }
+      },
+      "HospitalCollection" : {
+        "id" : "HospitalCollection",
+        "type" : "object",
+        "properties" : {
+          "items" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "Hospital"
+            }
+          }
+        }
+      }
+    },
+    "methods" : {
+      "ar.com.gtug.bainfo.endppoints.locations.HospitalEndpoint.listHospital" : {
+        "response" : {
+          "$ref" : "HospitalCollection"
+        }
+      },
+      "ar.com.gtug.bainfo.endppoints.locations.HospitalEndpoint.getHospital" : {
+        "response" : {
+          "$ref" : "Hospital"
+        }
+      },
+      "ar.com.gtug.bainfo.endppoints.locations.HospitalEndpoint.updateHospital" : {
+        "request" : {
+          "$ref" : "Hospital"
+        },
+        "response" : {
+          "$ref" : "Hospital"
+        }
+      },
+      "ar.com.gtug.bainfo.endppoints.locations.HospitalEndpoint.removeHospital" : {
+        "response" : {
+          "$ref" : "Hospital"
+        }
+      },
+      "ar.com.gtug.bainfo.endppoints.locations.HospitalEndpoint.insertHospital" : {
+        "request" : {
+          "$ref" : "Hospital"
+        },
+        "response" : {
+          "$ref" : "Hospital"
+        }
+      }
+    }
+  }
+}

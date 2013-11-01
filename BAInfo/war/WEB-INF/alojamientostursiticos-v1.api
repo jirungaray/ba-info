@@ -1,0 +1,217 @@
+{
+  "extends" : "thirdParty.api",
+  "abstract" : false,
+  "root" : "https://ba-info.appspot.com/_ah/api",
+  "name" : "alojamientostursiticos",
+  "version" : "v1",
+  "defaultVersion" : false,
+  "adapter" : {
+    "bns" : "https://ba-info.appspot.com/_ah/spi",
+    "deadline" : 10.0,
+    "type" : "lily"
+  },
+  "auth" : {
+    "allowCookieAuth" : false
+  },
+  "frontendLimits" : {
+    "unregisteredUserQps" : -1,
+    "unregisteredQps" : -1,
+    "unregisteredDaily" : -1,
+    "rules" : [ ]
+  },
+  "cacheControl" : {
+    "type" : "no-cache",
+    "maxAge" : 0
+  },
+  "methods" : {
+    "alojamientostursiticos.alojamientoTursiticoEndpoint.insertAlojamientoTursitico" : {
+      "path" : "alojamientotursitico",
+      "httpMethod" : "POST",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ ],
+      "clientIds" : [ "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "ar.com.gtug.bainfo.endppoints.locations.AlojamientoTursiticoEndpoint.insertAlojamientoTursitico",
+      "request" : {
+        "body" : "autoTemplate(backendRequest)",
+        "bodyName" : "resource"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "alojamientostursiticos.alojamientoTursiticoEndpoint.removeAlojamientoTursitico" : {
+      "path" : "alojamientotursitico/{id}",
+      "httpMethod" : "DELETE",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ ],
+      "clientIds" : [ "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "ar.com.gtug.bainfo.endppoints.locations.AlojamientoTursiticoEndpoint.removeAlojamientoTursitico",
+      "request" : {
+        "parameters" : {
+          "id" : {
+            "type" : "int64",
+            "required" : true
+          }
+        },
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "alojamientostursiticos.alojamientoTursiticoEndpoint.listAlojamientoTursitico" : {
+      "path" : "alojamientotursitico",
+      "httpMethod" : "GET",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ ],
+      "clientIds" : [ "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "ar.com.gtug.bainfo.endppoints.locations.AlojamientoTursiticoEndpoint.listAlojamientoTursitico",
+      "request" : {
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "alojamientostursiticos.alojamientoTursiticoEndpoint.updateAlojamientoTursitico" : {
+      "path" : "alojamientotursitico",
+      "httpMethod" : "PUT",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ ],
+      "clientIds" : [ "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "ar.com.gtug.bainfo.endppoints.locations.AlojamientoTursiticoEndpoint.updateAlojamientoTursitico",
+      "request" : {
+        "body" : "autoTemplate(backendRequest)",
+        "bodyName" : "resource"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "alojamientostursiticos.alojamientoTursiticoEndpoint.getAlojamientoTursitico" : {
+      "path" : "alojamientotursitico/{id}",
+      "httpMethod" : "GET",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ ],
+      "clientIds" : [ "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "ar.com.gtug.bainfo.endppoints.locations.AlojamientoTursiticoEndpoint.getAlojamientoTursitico",
+      "request" : {
+        "parameters" : {
+          "id" : {
+            "type" : "int64",
+            "required" : true
+          }
+        },
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    }
+  },
+  "descriptor" : {
+    "schemas" : {
+      "AlojamientoTursitico" : {
+        "id" : "AlojamientoTursitico",
+        "type" : "object",
+        "properties" : {
+          "id" : {
+            "type" : "string",
+            "format" : "int64"
+          },
+          "categoria" : {
+            "type" : "string"
+          },
+          "nombre" : {
+            "type" : "string"
+          },
+          "domicilio" : {
+            "type" : "string"
+          },
+          "ubicacion" : {
+            "type" : "string"
+          },
+          "telefono" : {
+            "type" : "string"
+          },
+          "direccion" : {
+            "type" : "string"
+          },
+          "altura" : {
+            "type" : "string"
+          },
+          "web" : {
+            "type" : "string"
+          },
+          "email" : {
+            "type" : "string"
+          },
+          "latitud" : {
+            "type" : "number",
+            "format" : "float"
+          },
+          "longitud" : {
+            "type" : "number",
+            "format" : "float"
+          },
+          "separatorChar" : {
+            "type" : "string"
+          },
+          "sourceURL" : {
+            "type" : "string"
+          }
+        }
+      },
+      "AlojamientoTursiticoCollection" : {
+        "id" : "AlojamientoTursiticoCollection",
+        "type" : "object",
+        "properties" : {
+          "items" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "AlojamientoTursitico"
+            }
+          }
+        }
+      }
+    },
+    "methods" : {
+      "ar.com.gtug.bainfo.endppoints.locations.AlojamientoTursiticoEndpoint.insertAlojamientoTursitico" : {
+        "request" : {
+          "$ref" : "AlojamientoTursitico"
+        },
+        "response" : {
+          "$ref" : "AlojamientoTursitico"
+        }
+      },
+      "ar.com.gtug.bainfo.endppoints.locations.AlojamientoTursiticoEndpoint.removeAlojamientoTursitico" : {
+        "response" : {
+          "$ref" : "AlojamientoTursitico"
+        }
+      },
+      "ar.com.gtug.bainfo.endppoints.locations.AlojamientoTursiticoEndpoint.listAlojamientoTursitico" : {
+        "response" : {
+          "$ref" : "AlojamientoTursiticoCollection"
+        }
+      },
+      "ar.com.gtug.bainfo.endppoints.locations.AlojamientoTursiticoEndpoint.updateAlojamientoTursitico" : {
+        "request" : {
+          "$ref" : "AlojamientoTursitico"
+        },
+        "response" : {
+          "$ref" : "AlojamientoTursitico"
+        }
+      },
+      "ar.com.gtug.bainfo.endppoints.locations.AlojamientoTursiticoEndpoint.getAlojamientoTursitico" : {
+        "response" : {
+          "$ref" : "AlojamientoTursitico"
+        }
+      }
+    }
+  }
+}

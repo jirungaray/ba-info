@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cronentries>
+
+  <cron>
+    <url>/cron/refreshData?data=biblioteca</url>
+    <description>Refresca la info de las bibliotecas</description>
+    <schedule>every day 00:00</schedule>
+    <timezone>America/Argentina/Buenos_Aires</timezone>
+  </cron>
+    <cron>
+    <url>/cron/refreshData?data=viajes</url>
+    <description>Refresca la info de las Agencias de Viajes</description>
+    <schedule>every day 00:00</schedule>
+    <timezone>America/Argentina/Buenos_Aires</timezone>
+  </cron>
+    <cron>
+    <url>/cron/refreshData?data=alojamientos</url>
+    <description>Refresca la info de los Alojamientos Turisticos</description>
+    <schedule>every day 00:00</schedule>
+    <timezone>America/Argentina/Buenos_Aires</timezone>
+  </cron>
+    <cron>
+    <url>/cron/refreshData?data=bicicleteria</url>
+    <description>Refresca la info de las Bicicleterias</description>
+    <schedule>every day 00:00</schedule>
+    <timezone>America/Argentina/Buenos_Aires</timezone>
+  </cron>
+    <cron>
+    <url>/cron/refreshData?data=cesac</url>
+    <description>Refresca la info de los Centros de Atencion CESAC</description>
+    <schedule>every day 00:00</schedule>
+    <timezone>America/Argentina/Buenos_Aires</timezone>
+  </cron>
+  <cron>
+    <url>/cron/refreshData?data=comisaria</url>
+    <description>Refresca la info de las comisarias</description>
+    <schedule>every day 00:00</schedule>
+    <timezone>America/Argentina/Buenos_Aires</timezone>
+  </cron>
+   <cron>
+    <url>/cron/refreshData?data=hospital</url>
+    <description>Refresca la info de los hospitales</description>
+    <schedule>every day 00:00</schedule>
+    <timezone>America/Argentina/Buenos_Aires</timezone>
+  </cron>
+  
+</cronentries>

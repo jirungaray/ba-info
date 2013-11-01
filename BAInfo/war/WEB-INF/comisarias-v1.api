@@ -1,0 +1,208 @@
+{
+  "extends" : "thirdParty.api",
+  "abstract" : false,
+  "root" : "https://ba-info.appspot.com/_ah/api",
+  "name" : "comisarias",
+  "version" : "v1",
+  "defaultVersion" : false,
+  "adapter" : {
+    "bns" : "https://ba-info.appspot.com/_ah/spi",
+    "deadline" : 10.0,
+    "type" : "lily"
+  },
+  "auth" : {
+    "allowCookieAuth" : false
+  },
+  "frontendLimits" : {
+    "unregisteredUserQps" : -1,
+    "unregisteredQps" : -1,
+    "unregisteredDaily" : -1,
+    "rules" : [ ]
+  },
+  "cacheControl" : {
+    "type" : "no-cache",
+    "maxAge" : 0
+  },
+  "methods" : {
+    "comisarias.comisariaEndpoint.insertComisaria" : {
+      "path" : "comisaria",
+      "httpMethod" : "POST",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ ],
+      "clientIds" : [ "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "ar.com.gtug.bainfo.endppoints.locations.ComisariaEndpoint.insertComisaria",
+      "request" : {
+        "body" : "autoTemplate(backendRequest)",
+        "bodyName" : "resource"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "comisarias.comisariaEndpoint.removeComisaria" : {
+      "path" : "comisaria/{id}",
+      "httpMethod" : "DELETE",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ ],
+      "clientIds" : [ "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "ar.com.gtug.bainfo.endppoints.locations.ComisariaEndpoint.removeComisaria",
+      "request" : {
+        "parameters" : {
+          "id" : {
+            "type" : "int64",
+            "required" : true
+          }
+        },
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "comisarias.comisariaEndpoint.listComisaria" : {
+      "path" : "comisaria",
+      "httpMethod" : "GET",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ ],
+      "clientIds" : [ "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "ar.com.gtug.bainfo.endppoints.locations.ComisariaEndpoint.listComisaria",
+      "request" : {
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "comisarias.comisariaEndpoint.getComisaria" : {
+      "path" : "comisaria/{id}",
+      "httpMethod" : "GET",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ ],
+      "clientIds" : [ "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "ar.com.gtug.bainfo.endppoints.locations.ComisariaEndpoint.getComisaria",
+      "request" : {
+        "parameters" : {
+          "id" : {
+            "type" : "int64",
+            "required" : true
+          }
+        },
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "comisarias.comisariaEndpoint.updateComisaria" : {
+      "path" : "comisaria",
+      "httpMethod" : "PUT",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ ],
+      "clientIds" : [ "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "ar.com.gtug.bainfo.endppoints.locations.ComisariaEndpoint.updateComisaria",
+      "request" : {
+        "body" : "autoTemplate(backendRequest)",
+        "bodyName" : "resource"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    }
+  },
+  "descriptor" : {
+    "schemas" : {
+      "Comisaria" : {
+        "id" : "Comisaria",
+        "type" : "object",
+        "properties" : {
+          "id" : {
+            "type" : "string",
+            "format" : "int64"
+          },
+          "idComisaria" : {
+            "type" : "integer"
+          },
+          "nombre" : {
+            "type" : "string"
+          },
+          "direccion" : {
+            "type" : "string"
+          },
+          "comuna" : {
+            "type" : "string"
+          },
+          "barrio" : {
+            "type" : "string"
+          },
+          "cirscuncri" : {
+            "type" : "string"
+          },
+          "longitud" : {
+            "type" : "number",
+            "format" : "float"
+          },
+          "latitud" : {
+            "type" : "number",
+            "format" : "float"
+          },
+          "separatorChar" : {
+            "type" : "string"
+          },
+          "sourceURL" : {
+            "type" : "string"
+          }
+        }
+      },
+      "ComisariaCollection" : {
+        "id" : "ComisariaCollection",
+        "type" : "object",
+        "properties" : {
+          "items" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "Comisaria"
+            }
+          }
+        }
+      }
+    },
+    "methods" : {
+      "ar.com.gtug.bainfo.endppoints.locations.ComisariaEndpoint.insertComisaria" : {
+        "request" : {
+          "$ref" : "Comisaria"
+        },
+        "response" : {
+          "$ref" : "Comisaria"
+        }
+      },
+      "ar.com.gtug.bainfo.endppoints.locations.ComisariaEndpoint.removeComisaria" : {
+        "response" : {
+          "$ref" : "Comisaria"
+        }
+      },
+      "ar.com.gtug.bainfo.endppoints.locations.ComisariaEndpoint.listComisaria" : {
+        "response" : {
+          "$ref" : "ComisariaCollection"
+        }
+      },
+      "ar.com.gtug.bainfo.endppoints.locations.ComisariaEndpoint.getComisaria" : {
+        "response" : {
+          "$ref" : "Comisaria"
+        }
+      },
+      "ar.com.gtug.bainfo.endppoints.locations.ComisariaEndpoint.updateComisaria" : {
+        "request" : {
+          "$ref" : "Comisaria"
+        },
+        "response" : {
+          "$ref" : "Comisaria"
+        }
+      }
+    }
+  }
+}

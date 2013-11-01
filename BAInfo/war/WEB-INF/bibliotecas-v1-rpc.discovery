@@ -1,0 +1,222 @@
+{
+ "kind": "discovery#rpcDescription",
+ "etag": "\"doS0mIKix6_L3_LoT-sZZjofha4/eh4B-xe3hypezojN8s-T9Bb7vqs\"",
+ "discoveryVersion": "v1",
+ "id": "bibliotecas:v1",
+ "name": "bibliotecas",
+ "version": "v1",
+ "description": "This is an API",
+ "icons": {
+  "x16": "http://www.google.com/images/icons/product/search-16.gif",
+  "x32": "http://www.google.com/images/icons/product/search-32.gif"
+ },
+ "protocol": "rpc",
+ "rootUrl": "https://ba-info.appspot.com/_ah/api/",
+ "rpcUrl": "https://ba-info.appspot.com/_ah/api/rpc",
+ "rpcPath": "/_ah/api/rpc",
+ "parameters": {
+  "alt": {
+   "type": "string",
+   "description": "Data format for the response.",
+   "default": "json",
+   "enum": [
+    "json"
+   ],
+   "enumDescriptions": [
+    "Responses with Content-Type of application/json"
+   ],
+   "location": "query"
+  },
+  "fields": {
+   "type": "string",
+   "description": "Selector specifying which fields to include in a partial response.",
+   "location": "query"
+  },
+  "key": {
+   "type": "string",
+   "description": "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.",
+   "location": "query"
+  },
+  "oauth_token": {
+   "type": "string",
+   "description": "OAuth 2.0 token for the current user.",
+   "location": "query"
+  },
+  "prettyPrint": {
+   "type": "boolean",
+   "description": "Returns response with indentations and line breaks.",
+   "default": "true",
+   "location": "query"
+  },
+  "quotaUser": {
+   "type": "string",
+   "description": "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.",
+   "location": "query"
+  },
+  "userIp": {
+   "type": "string",
+   "description": "IP address of the site where the request originates. Use this if you want to enforce per-user limits.",
+   "location": "query"
+  }
+ },
+ "auth": {
+  "oauth2": {
+   "scopes": {
+    "https://www.googleapis.com/auth/userinfo.email": {
+     "description": "View your email address"
+    }
+   }
+  }
+ },
+ "schemas": {
+  "Biblioteca": {
+   "id": "Biblioteca",
+   "type": "object",
+   "properties": {
+    "barrios": {
+     "type": "string"
+    },
+    "comuna": {
+     "type": "string"
+    },
+    "domicilio": {
+     "type": "string"
+    },
+    "email": {
+     "type": "string"
+    },
+    "id": {
+     "type": "string",
+     "format": "int64"
+    },
+    "idBiblioteca": {
+     "type": "integer",
+     "format": "int32"
+    },
+    "latitud": {
+     "type": "number",
+     "format": "float"
+    },
+    "longitud": {
+     "type": "number",
+     "format": "float"
+    },
+    "nombre": {
+     "type": "string"
+    },
+    "numeroMapa": {
+     "type": "string"
+    },
+    "separatorChar": {
+     "type": "string"
+    },
+    "sourceURL": {
+     "type": "string"
+    },
+    "telefono": {
+     "type": "string"
+    },
+    "tipo": {
+     "type": "string"
+    }
+   }
+  },
+  "BibliotecaCollection": {
+   "id": "BibliotecaCollection",
+   "type": "object",
+   "properties": {
+    "items": {
+     "type": "array",
+     "items": {
+      "$ref": "Biblioteca"
+     }
+    }
+   }
+  }
+ },
+ "methods": {
+  "bibliotecas.bibliotecaEndpoint.getBiblioteca": {
+   "id": "bibliotecas.bibliotecaEndpoint.getBiblioteca",
+   "allowGet": true,
+   "parameters": {
+    "id": {
+     "type": "string",
+     "required": true,
+     "format": "int64"
+    }
+   },
+   "parameterOrder": [
+    "id"
+   ],
+   "returns": {
+    "$ref": "Biblioteca"
+   },
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
+  "bibliotecas.bibliotecaEndpoint.insertBiblioteca": {
+   "id": "bibliotecas.bibliotecaEndpoint.insertBiblioteca",
+   "parameters": {
+    "resource": {
+     "$ref": "Biblioteca"
+    }
+   },
+   "parameterOrder": [
+    "resource"
+   ],
+   "returns": {
+    "$ref": "Biblioteca"
+   },
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
+  "bibliotecas.bibliotecaEndpoint.listBiblioteca": {
+   "id": "bibliotecas.bibliotecaEndpoint.listBiblioteca",
+   "allowGet": true,
+   "returns": {
+    "$ref": "BibliotecaCollection"
+   },
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
+  "bibliotecas.bibliotecaEndpoint.removeBiblioteca": {
+   "id": "bibliotecas.bibliotecaEndpoint.removeBiblioteca",
+   "parameters": {
+    "id": {
+     "type": "string",
+     "required": true,
+     "format": "int64"
+    }
+   },
+   "parameterOrder": [
+    "id"
+   ],
+   "returns": {
+    "$ref": "Biblioteca"
+   },
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
+  "bibliotecas.bibliotecaEndpoint.updateBiblioteca": {
+   "id": "bibliotecas.bibliotecaEndpoint.updateBiblioteca",
+   "parameters": {
+    "resource": {
+     "$ref": "Biblioteca"
+    }
+   },
+   "parameterOrder": [
+    "resource"
+   ],
+   "returns": {
+    "$ref": "Biblioteca"
+   },
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  }
+ }
+}
